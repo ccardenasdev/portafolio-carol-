@@ -1,0 +1,105 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.row > span:last-child {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--rose);
+}
+
+.iconGlyph {
+  width: 16px;
+  height: 16px;
+  color: var(--rose-vivid);
+}
+
+.row:nth-child(2) .icon {
+  background: var(--lavender);
+}
+
+.row:nth-child(2) .iconGlyph {
+  color: var(--lavender-vivid);
+}
+
+.row:nth-child(3) .icon {
+  background: var(--sky);
+}
+
+.row:nth-child(3) .iconGlyph {
+  color: var(--sky-vivid);
+}
+
+.row:nth-child(4) .icon {
+  background: var(--champagne);
+}
+
+.row:nth-child(4) .iconGlyph {
+  color: var(--champagne-vivid);
+}
+
+.value {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.label {
+  font-size: 0.74rem;
+  color: var(--warm-gray);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 18px;
+  height: 40px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--on-vivid);
+  font-size: 0.82rem;
+  font-weight: 700;
+  transition: transform 0.25s var(--ease-premium);
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+}
+
+.ctaIcon {
+  width: 13px;
+  height: 13px;
+}

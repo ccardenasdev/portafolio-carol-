@@ -1,0 +1,62 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.header h3 {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  flex: 1;
+}
+
+.trait {
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--cream);
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  color: var(--lavender-vivid);
+  margin-bottom: 8px;
+}
+
+.trait:nth-child(2) .icon {
+  color: var(--rose-vivid);
+}
+
+.trait:nth-child(3) .icon {
+  color: var(--sky-vivid);
+}
+
+.trait:nth-child(4) .icon {
+  color: var(--peach-vivid);
+}
+
+.trait h4 {
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.trait p {
+  margin-top: 4px;
+  font-size: 0.7rem;
+  line-height: 1.45;
+  color: var(--warm-gray);
+}

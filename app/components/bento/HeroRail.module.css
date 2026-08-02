@@ -1,0 +1,56 @@
+.rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 56px;
+  flex: none;
+  padding-top: 6px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: var(--rose);
+  color: var(--rose-vivid);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.dots {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--border);
+}
+
+.dot[data-first] {
+  width: 7px;
+  height: 7px;
+  background: var(--rose-vivid);
+}
+
+.branch {
+  width: 32px;
+  flex: 1;
+  color: var(--lavender);
+  min-height: 140px;
+}
+
+@media (max-width: 1180px) {
+  .rail {
+    display: none;
+  }
+}

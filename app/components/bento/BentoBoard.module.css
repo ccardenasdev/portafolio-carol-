@@ -1,0 +1,97 @@
+.board {
+  position: relative;
+  width: 100%;
+  max-width: var(--board-max);
+  margin-inline: auto;
+  padding: var(--board-pad);
+  isolation: isolate;
+}
+
+.ambient {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+}
+
+.blobRose {
+  width: 420px;
+  height: 420px;
+  top: -100px;
+  right: 6%;
+  background: var(--rose);
+}
+
+.blobLavender {
+  width: 380px;
+  height: 380px;
+  top: 40%;
+  left: -120px;
+  background: var(--lavender);
+}
+
+.blobMint {
+  width: 340px;
+  height: 340px;
+  bottom: -120px;
+  right: 18%;
+  background: var(--mint);
+  opacity: 0.4;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: auto minmax(280px, 0.95fr) minmax(0, 2.1fr) minmax(280px, 0.95fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.row2 {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.row3 {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr 1fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+@media (max-width: 1180px) {
+  .heroGrid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+  }
+
+  .row2,
+  .row3 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .row2,
+  .row3 {
+    grid-template-columns: 1fr;
+  }
+}

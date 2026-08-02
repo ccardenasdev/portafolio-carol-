@@ -1,0 +1,62 @@
+.chip {
+  --tone: var(--lavender);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-chip);
+  background: linear-gradient(
+    155deg,
+    color-mix(in srgb, var(--tone) 85%, white) 0%,
+    color-mix(in srgb, var(--tone) 45%, white) 100%
+  );
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset,
+    0 -6px 10px -6px rgba(0, 0, 0, 0.12) inset,
+    0 6px 14px -8px color-mix(in srgb, var(--tone) 70%, transparent);
+  transition: transform 0.28s var(--ease-premium),
+    box-shadow 0.28s var(--ease-premium);
+}
+
+.chip[data-size="sm"] {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+}
+
+.chip[data-tone="rose"] {
+  --tone: var(--rose);
+  --tone-vivid: var(--rose-vivid);
+}
+
+.chip[data-tone="lavender"] {
+  --tone: var(--lavender);
+  --tone-vivid: var(--lavender-vivid);
+}
+
+.chip[data-tone="sky"] {
+  --tone: var(--sky);
+  --tone-vivid: var(--sky-vivid);
+}
+
+.chip[data-tone="mint"] {
+  --tone: var(--mint);
+  --tone-vivid: var(--mint-vivid);
+}
+
+.chip[data-tone="peach"] {
+  --tone: var(--peach);
+  --tone-vivid: var(--peach-vivid);
+}
+
+.icon {
+  width: 19px;
+  height: 19px;
+  color: var(--tone-vivid, var(--ink));
+}
+
+.chip[data-size="sm"] .icon {
+  width: 15px;
+  height: 15px;
+}

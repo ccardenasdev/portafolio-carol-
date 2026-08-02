@@ -1,0 +1,26 @@
+.rail {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.polaroidRow {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.duoRow {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: start;
+}
+
+@media (max-width: 520px) {
+  .duoRow {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}

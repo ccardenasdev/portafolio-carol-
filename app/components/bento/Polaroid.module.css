@@ -1,0 +1,66 @@
+.polaroid {
+  --tone: var(--peach);
+  display: inline-flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px 8px 12px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px var(--shadow), 0 18px 30px -18px rgba(31, 31, 31, 0.28);
+  transform: rotate(var(--rotate, 0deg));
+  transition: transform 0.35s var(--ease-premium);
+}
+
+.polaroid:hover {
+  transform: rotate(0deg) translateY(-3px) scale(1.02);
+}
+
+.polaroid[data-tone="rose"] {
+  --tone: var(--rose);
+}
+
+.polaroid[data-tone="sky"] {
+  --tone: var(--sky);
+}
+
+.polaroid[data-tone="lavender"] {
+  --tone: var(--lavender);
+}
+
+.polaroid[data-tone="mint"] {
+  --tone: var(--mint);
+}
+
+.photo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  width: 100%;
+  min-width: 96px;
+  border-radius: 6px;
+  background: linear-gradient(155deg, var(--tone), white);
+  text-align: center;
+  padding: 8px;
+  overflow: hidden;
+}
+
+.photo span {
+  font-size: 0.66rem;
+  font-weight: 600;
+  color: var(--ink);
+  opacity: 0.6;
+}
+
+.polaroid[data-size="lg"] .photo {
+  min-width: 150px;
+}
+
+.polaroid figcaption {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-align: center;
+  padding: 0 4px;
+}

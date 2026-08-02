@@ -1,0 +1,36 @@
+.note {
+  position: relative;
+  padding: 16px 16px 14px;
+  border-radius: 4px 4px 16px 4px;
+  background: var(--champagne);
+  box-shadow: 0 1px 2px var(--shadow), 0 16px 26px -18px rgba(31, 31, 31, 0.3);
+  transform: rotate(2deg);
+  transition: transform 0.3s var(--ease-premium);
+}
+
+.note:hover {
+  transform: rotate(0deg);
+}
+
+.cross {
+  width: 15px;
+  height: 15px;
+  color: var(--champagne-vivid);
+  margin-bottom: 8px;
+}
+
+.quote {
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.reference {
+  margin-top: 8px;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--champagne-vivid);
+}

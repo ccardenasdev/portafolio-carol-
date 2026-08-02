@@ -1,0 +1,126 @@
+.frame {
+  position: relative;
+  min-width: 0;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: white;
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 2px var(--shadow), 0 30px 60px -30px rgba(31, 31, 31, 0.22);
+}
+
+.titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 42px;
+  padding: 0 16px;
+  background: var(--cream);
+  border-bottom: 1px solid var(--border);
+}
+
+.dots {
+  position: absolute;
+  left: 16px;
+  display: flex;
+  gap: 7px;
+}
+
+.dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dots span[data-tone="close"] {
+  background: #ff6b6b;
+}
+
+.dots span[data-tone="min"] {
+  background: #ffc861;
+}
+
+.dots span[data-tone="max"] {
+  background: #6fd39a;
+}
+
+.url {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.78rem;
+  color: var(--warm-gray);
+}
+
+.scene {
+  position: relative;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+}
+
+.photo {
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.miniCard {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: min(260px, 60%);
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+
+.miniHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--ink);
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(31, 31, 31, 0.08);
+}
+
+.miniList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.76rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.miniList li {
+  padding-left: 12px;
+  position: relative;
+}
+
+.miniList li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--rose-vivid);
+}
+
+.miniFooter {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(31, 31, 31, 0.08);
+  font-size: 0.74rem;
+  font-style: italic;
+  color: var(--rose-vivid);
+}
+
+@media (max-width: 620px) {
+  .miniCard {
+    width: calc(100% - 32px);
+  }
+}

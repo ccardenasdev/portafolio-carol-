@@ -1,0 +1,16 @@
+.flatlay {
+  position: fixed;
+  left: 12px;
+  bottom: 0;
+  width: 160px;
+  height: auto;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 5;
+}
+
+@media (max-width: 1180px) {
+  .flatlay {
+    display: none;
+  }
+}

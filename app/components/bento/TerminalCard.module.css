@@ -1,0 +1,73 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: #201f2b;
+  box-shadow: 0 1px 2px var(--shadow), 0 20px 40px -28px rgba(31, 31, 31, 0.35);
+}
+
+.titlebar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: #17161f;
+}
+
+.dots {
+  display: flex;
+  gap: 6px;
+}
+
+.dots span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.dots span[data-tone="close"] {
+  background: #ff6b6b;
+}
+
+.dots span[data-tone="min"] {
+  background: #ffc861;
+}
+
+.dots span[data-tone="max"] {
+  background: #6fd39a;
+}
+
+.path {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  color: #9d9ab5;
+}
+
+.body {
+  flex: 1;
+  padding: 16px;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.76rem;
+  line-height: 1.7;
+  color: #d8d6ea;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.keyword {
+  color: #c792ea;
+}
+
+.prop {
+  color: #82d8ff;
+}
+
+.value {
+  color: #f2d38c;
+}
+
+.heart {
+  color: var(--rose-vivid);
+}

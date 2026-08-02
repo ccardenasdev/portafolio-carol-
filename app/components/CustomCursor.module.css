@@ -1,0 +1,53 @@
+.cursorActive :global(*) {
+  cursor: none !important;
+}
+
+.dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  border-radius: 50%;
+  background: var(--ink);
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform;
+}
+
+.ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 34px;
+  height: 34px;
+  margin: -17px 0 0 -17px;
+  border-radius: 50%;
+  border: 1.5px solid var(--warm-gray);
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 9998;
+  will-change: transform;
+  transition: width 0.25s var(--ease-premium), height 0.25s var(--ease-premium),
+    margin 0.25s var(--ease-premium), opacity 0.25s var(--ease-premium),
+    border-color 0.25s var(--ease-premium),
+    background-color 0.25s var(--ease-premium);
+}
+
+.ring[data-hovering] {
+  width: 56px;
+  height: 56px;
+  margin: -28px 0 0 -28px;
+  opacity: 1;
+  border-color: transparent;
+  background: color-mix(in srgb, var(--lavender-vivid) 35%, transparent);
+  backdrop-filter: blur(6px);
+}
+
+@media (max-width: 900px) {
+  .dot,
+  .ring {
+    display: none;
+  }
+}

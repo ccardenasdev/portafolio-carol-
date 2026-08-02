@@ -1,0 +1,48 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.header h3 {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.icon {
+  flex: none;
+  width: 15px;
+  height: 15px;
+  color: var(--rose-vivid);
+}
+
+.list li:nth-child(3n+2) .icon {
+  color: var(--lavender-vivid);
+}
+
+.list li:nth-child(3n) .icon {
+  color: var(--sky-vivid);
+}
