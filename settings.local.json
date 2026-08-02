@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(disown)",
+      "Bash(rm -f About.tsx About.module.css Contact.tsx Contact.module.css Footer.tsx Footer.module.css Header.tsx Header.module.css Hero.tsx Hero.module.css Projects.tsx Projects.module.css Stack.tsx Stack.module.css)",
+      "Bash(mkdir -p bento)",
+      "Bash(grep -a -i \"error\\\\|warn\" \"C:/Users/CAROLC~1/AppData/Local/Temp/portfolio-dev.log\" | head -60)",
+      "Read(//c/Users/CAROLC~1/AppData/Local/Temp/**)",
+      "Bash(mkdir -p 'C:/Users/carol cardenas/Proyectos/portafolio-carol/public/images')",
+      "Bash(cp 'C:/Users/carol cardenas/Downloads/ChatGPT Image 1 ago 2026, 07_15_00 p.m..png' 'C:/Users/carol cardenas/Proyectos/portafolio-carol/public/images/hero-desk.png')",
+      "Bash(identify __TRACKED_VAR__/hero-desk.png)",
+      "Bash(git -C \"C:/Users/carol cardenas/Proyectos/portafolio-carol\" rev-parse --is-inside-work-tree)",
+      "Bash(powershell -Command \"Test-Path 'C:\\\\Users\\\\carol cardenas\\\\Proyectos\\\\portafolio-carol'\")",
+      "Bash(powershell -Command \"\\(Resolve-Path 'C:\\\\Users\\\\carol cardenas\\\\Proyectos\\\\portafolio-carol'\\).Path\")"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\carol cardenas\\Proyectos\\portafolio-carol"
+    ]
+  }
+}
