@@ -1,13 +1,41 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { nav, identity, socials } from "../../lib/content";
+import { useLanguage } from "../../lib/i18n";
 import { UiIcon } from "../icons/UiIcons";
 import styles from "./BentoNav.module.css";
 
 export default function BentoNav() {
+  const { t, lang, toggleLang } = useLanguage();
+  const { nav, identity, socials, ui } = t;
   const [activeHash, setActiveHash] = useState("#inicio");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+
+  useEffect(() => {
+    // The real theme is only knowable client-side (it was set by the
+    // blocking init script in layout.tsx before hydration), so it must be
+    // synced after mount rather than guessed during the initial render —
+    // guessing here would make the client's first render diverge from the
+    // server's and trigger a hydration mismatch.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setTheme(
+      document.documentElement.getAttribute("data-theme") === "dark"
+        ? "dark"
+        : "light"
+    );
+  }, []);
+
+  const toggleTheme = () => {
+    const next = theme === "dark" ? "light" : "dark";
+    setTheme(next);
+    document.documentElement.setAttribute("data-theme", next);
+    try {
+      localStorage.setItem("theme", next);
+    } catch {
+      // localStorage may be unavailable (e.g. private mode); theme just won't persist
+    }
+  };
 
   useEffect(() => {
     const sections = nav
@@ -47,14 +75,16 @@ export default function BentoNav() {
 
     sections.forEach(({ target }) => observer.observe(target));
     return () => observer.disconnect();
-  }, []);
+  }, [nav]);
 
-  const mailSocial = socials.find((s) => s.id === "mail");
+  const talkHref =
+    socials.find((s) => s.id === "whatsapp")?.href ??
+    socials.find((s) => s.id === "mail")?.href;
 
   return (
     <header className={styles.wrap}>
       <div className={`${styles.bar} glass`}>
-        <a href="#inicio" className={styles.brand} aria-label="Ir al inicio">
+        <a href="#inicio" className={styles.brand} aria-label={ui.navHome}>
           <span className={styles.brandMark}>CC</span>
         </a>
 
@@ -63,6 +93,7 @@ export default function BentoNav() {
           className={styles.menuToggle}
           aria-expanded={menuOpen}
           aria-controls="bento-nav"
+          aria-label={menuOpen ? ui.menuClose : ui.menuOpen}
           onClick={() => setMenuOpen((open) => !open)}
         >
           <UiIcon name={menuOpen ? "close" : "menu"} className={styles.menuIcon} />
@@ -72,7 +103,7 @@ export default function BentoNav() {
           id="bento-nav"
           className={styles.nav}
           data-open={menuOpen || undefined}
-          aria-label="Navegación principal"
+          aria-label={ui.navLandmark}
         >
           {nav.map((item) => (
             <a
@@ -93,13 +124,31 @@ export default function BentoNav() {
         </div>
 
         <div className={styles.actions}>
-          <a className={styles.talk} href={mailSocial?.href}>
+          <a
+            className={styles.talk}
+            href={talkHref}
+            target="_blank"
+            rel="noreferrer"
+          >
             <UiIcon name="chat" className={styles.talkIcon} />
-            <span>Hablemos</span>
+            <span>{ui.talk}</span>
           </a>
-          <span className={styles.themeToggle} aria-hidden="true">
-            <UiIcon name="sun" className={styles.sunIcon} />
-          </span>
+          <button
+            type="button"
+            className={styles.langToggle}
+            onClick={toggleLang}
+            aria-label={ui.langToggleLabel}
+          >
+            {lang === "es" ? "EN" : "ES"}
+          </button>
+          <button
+            type="button"
+            className={styles.themeToggle}
+            onClick={toggleTheme}
+            aria-label={theme === "dark" ? ui.themeToLight : ui.themeToDark}
+          >
+            <UiIcon name={theme === "dark" ? "moon" : "sun"} className={styles.sunIcon} />
+          </button>
         </div>
       </div>
     </header>

@@ -55,6 +55,12 @@
   border: 1px solid var(--border);
 }
 
+.pill[data-accent] {
+  color: var(--rose-vivid);
+  background: var(--rose);
+  border-color: transparent;
+}
+
 .description {
   margin-top: 18px;
   max-width: 40ch;
@@ -89,7 +95,7 @@
 }
 
 .secondary {
-  background: white;
+  background: var(--surface);
   color: var(--ink);
   border: 1px solid var(--border);
 }
@@ -130,7 +136,7 @@
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: white;
+  background: var(--surface);
   border: 1px solid var(--border);
   transition: transform 0.25s var(--ease-premium), background 0.25s var(--ease-premium);
 }

@@ -1,8 +1,13 @@
-import Reveal from "../Reveal";
-import { terminalValues } from "../../lib/content";
+"use client";
+
+import Reveal from "../../Reveal";
+import { useLanguage } from "../../../lib/i18n";
 import styles from "./TerminalCard.module.css";
 
 export default function TerminalCard() {
+  const { t } = useLanguage();
+  const { terminalValues, ui } = t;
+
   return (
     <Reveal delay={160} as="article" className={styles.card}>
       <div className={styles.titlebar}>
@@ -25,9 +30,10 @@ export default function TerminalCard() {
             </span>
           ))}
           {"}"};{"\n\n"}
-          <span className={styles.keyword}>while</span> (aprendiendo) {"{"}
+          <span className={styles.keyword}>while</span> ({ui.terminalLearning}) {"{"}
           {"\n"}
-          {"  "}construyendoSueños(); <span className={styles.heart}>♡</span>
+          {"  "}
+          {ui.terminalBuildingDreams}(); <span className={styles.heart}>♡</span>
           {"\n"}
           {"}"}
         </code>

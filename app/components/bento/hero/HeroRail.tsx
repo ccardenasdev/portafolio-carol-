@@ -1,4 +1,4 @@
-import { nav } from "../../lib/content";
+import { nav } from "../../../lib/content";
 import styles from "./HeroRail.module.css";
 
 export default function HeroRail() {

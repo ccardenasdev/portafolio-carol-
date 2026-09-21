@@ -1,0 +1,123 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.header h3 {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.headerIcon {
+  width: 17px;
+  height: 17px;
+  color: var(--warm-gray);
+}
+
+.intro {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--warm-gray);
+  margin-bottom: 16px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item {
+  --accent: var(--lavender-vivid);
+  --accent-wash: var(--lavender);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 14px;
+  background: var(--cream);
+  border: 1px solid transparent;
+  transition: transform 0.25s var(--ease-premium),
+    border-color 0.25s var(--ease-premium);
+}
+
+.item:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+.item[data-accent="rose"] {
+  --accent: var(--rose-vivid);
+  --accent-wash: var(--rose);
+}
+
+.item[data-accent="sky"] {
+  --accent: var(--sky-vivid);
+  --accent-wash: var(--sky);
+}
+
+.item[data-accent="lavender"] {
+  --accent: var(--lavender-vivid);
+  --accent-wash: var(--lavender);
+}
+
+.item[data-accent="mint"] {
+  --accent: var(--mint-vivid);
+  --accent-wash: var(--mint);
+}
+
+.icon {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--accent-wash);
+}
+
+.iconGlyph {
+  width: 16px;
+  height: 16px;
+  color: var(--accent);
+}
+
+.text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  font-size: 0.8rem;
+}
+
+.text strong {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.text span {
+  font-size: 0.72rem;
+  color: var(--warm-gray);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.arrow {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  color: var(--warm-gray);
+}

@@ -1,13 +1,18 @@
-import Reveal from "../Reveal";
-import { traits } from "../../lib/content";
-import { UiIcon } from "../icons/UiIcons";
+"use client";
+
+import Reveal from "../../Reveal";
+import { useLanguage } from "../../../lib/i18n";
+import { UiIcon } from "../../icons/UiIcons";
 import styles from "./WhyWorkWithMeCard.module.css";
 
 export default function WhyWorkWithMeCard() {
+  const { t } = useLanguage();
+  const { traits, ui } = t;
+
   return (
     <Reveal delay={80} as="article" className={`${styles.card} glass card`}>
       <div className={styles.header}>
-        <h3>¿Por qué trabajar conmigo?</h3>
+        <h3>{ui.whyWorkTitle}</h3>
         <span aria-hidden="true">💗</span>
       </div>
       <div className={styles.grid}>

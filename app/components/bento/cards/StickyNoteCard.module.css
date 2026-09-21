@@ -12,13 +12,6 @@
   transform: rotate(0deg);
 }
 
-.cross {
-  width: 15px;
-  height: 15px;
-  color: var(--champagne-vivid);
-  margin-bottom: 8px;
-}
-
 .quote {
   font-size: 0.8rem;
   font-weight: 600;

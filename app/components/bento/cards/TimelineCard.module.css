@@ -1,0 +1,102 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.group + .group {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.header h3 {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-left: 18px;
+}
+
+.list::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 4px;
+  bottom: 4px;
+  width: 2px;
+  background: var(--border);
+}
+
+.list li {
+  position: relative;
+  min-width: 0;
+}
+
+.dot {
+  position: absolute;
+  left: -18px;
+  top: 3px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--rose-vivid);
+  box-shadow: 0 0 0 3px var(--rose);
+}
+
+.list li:nth-child(2) .dot {
+  background: var(--lavender-vivid);
+  box-shadow: 0 0 0 3px var(--lavender);
+}
+
+.list li:nth-child(3) .dot {
+  background: var(--sky-vivid);
+  box-shadow: 0 0 0 3px var(--sky);
+}
+
+.entry {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.date {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+}
+
+.entry h4 {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.place {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--warm-gray);
+}
+
+.description {
+  margin-top: 2px;
+  font-size: 0.74rem;
+  line-height: 1.5;
+  color: var(--warm-gray);
+}

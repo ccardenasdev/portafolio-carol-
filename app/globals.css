@@ -4,22 +4,27 @@
   /* Backgrounds — 80% warm white */
   --ivory: #fcfbfa;
   --cream: #f8f4f1;
+  --surface: #ffffff;
+  --surface-soft: rgba(255, 255, 255, 0.7);
+  --surface-strong: rgba(255, 255, 255, 0.85);
+  --glass-bg: rgba(255, 255, 255, 0.62);
+  --glass-border: rgba(255, 255, 255, 0.7);
 
-  /* Pastels — 15% soft washes */
-  --rose: #f5d8e7;
-  --lavender: #e9e2ff;
-  --sky: #e6f3ff;
-  --peach: #ffe8dd;
-  --mint: #eaf8f2;
-  --champagne: #f5ebdd;
+  /* Pastels — soft washes, muted rather than saturated */
+  --rose: #f6dce8;
+  --lavender: #e7e2f6;
+  --sky: #e2edf6;
+  --peach: #f7e5db;
+  --mint: #e2f0e9;
+  --champagne: #f2ead9;
 
-  /* Vivid accents — 5%, saturated pops for CTAs / numerals / active states */
-  --rose-vivid: #ec4899;
-  --lavender-vivid: #8b5cf6;
-  --sky-vivid: #3b82f6;
-  --peach-vivid: #f97316;
-  --mint-vivid: #10b981;
-  --champagne-vivid: #c9972e;
+  /* Accents — gentle pastel pops for CTAs / numerals / active states */
+  --rose-vivid: #d6739a;
+  --lavender-vivid: #8c7ae0;
+  --sky-vivid: #5b93c9;
+  --peach-vivid: #e08a55;
+  --mint-vivid: #4fa889;
+  --champagne-vivid: #b99a57;
 
   --gradient-brand: linear-gradient(135deg, var(--rose-vivid), var(--lavender-vivid));
 
@@ -41,6 +46,39 @@
   --board-pad: clamp(16px, 2.4vw, 32px);
 
   --sticky-header-height: 0px;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --ivory: #15141b;
+  --cream: #1d1c26;
+  --surface: #232130;
+  --surface-soft: rgba(255, 255, 255, 0.06);
+  --surface-strong: rgba(24, 23, 31, 0.92);
+  --glass-bg: rgba(35, 33, 46, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.08);
+
+  --rose: #3a2431;
+  --lavender: #2a2740;
+  --sky: #1f2c3a;
+  --peach: #392a20;
+  --mint: #1f2f29;
+  --champagne: #332a1e;
+
+  --rose-vivid: #ea9bbb;
+  --lavender-vivid: #b3a3f5;
+  --sky-vivid: #85b3ee;
+  --peach-vivid: #eca878;
+  --mint-vivid: #72d3ae;
+  --champagne-vivid: #d9b872;
+
+  --ink: #f4f2f7;
+  --warm-gray: #a9a6b8;
+  --on-vivid: #18161f;
+
+  --border: rgba(255, 255, 255, 0.12);
+  --shadow: rgba(0, 0, 0, 0.5);
 }
 
 html {
@@ -123,10 +161,10 @@ main {
 
 /* Glassmorphism — the dominant surface language of the bento board */
 .glass {
-  background: rgba(255, 255, 255, 0.62);
+  background: var(--glass-bg);
   backdrop-filter: blur(16px) saturate(150%);
   -webkit-backdrop-filter: blur(16px) saturate(150%);
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--glass-border);
   box-shadow: 0 1px 2px var(--shadow), 0 20px 40px -28px rgba(31, 31, 31, 0.18);
 }
 

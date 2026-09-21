@@ -1,11 +1,16 @@
-import Reveal from "../Reveal";
-import { purpose } from "../../lib/content";
-import { UiIcon } from "../icons/UiIcons";
+"use client";
+
+import Reveal from "../../Reveal";
+import { useLanguage } from "../../../lib/i18n";
+import { UiIcon } from "../../icons/UiIcons";
 import styles from "./PurposeCard.module.css";
 
 export default function PurposeCard() {
+  const { t } = useLanguage();
+  const { purpose } = t;
+
   return (
-    <Reveal as="article" className={`${styles.card} glass card`} id="experiencia">
+    <Reveal as="article" className={`${styles.card} glass card`}>
       <div className={styles.header}>
         <h3>{purpose.title}</h3>
         <span aria-hidden="true">🎯</span>

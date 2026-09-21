@@ -1,12 +1,17 @@
-import { goals2026 } from "../../lib/content";
-import { UiIcon } from "../icons/UiIcons";
+"use client";
+
+import { useLanguage } from "../../../lib/i18n";
+import { UiIcon } from "../../icons/UiIcons";
 import styles from "./GoalsCard.module.css";
 
 export default function GoalsCard() {
+  const { t } = useLanguage();
+  const { goals2026, ui } = t;
+
   return (
-    <div className={`${styles.card} glass`} id="educacion">
+    <div className={`${styles.card} glass`}>
       <div className={styles.header}>
-        <p>Metas 2026</p>
+        <p>{ui.goalsTitle}</p>
         <span className={styles.targetIcon}>
           <UiIcon name="target" className={styles.targetGlyph} />
         </span>

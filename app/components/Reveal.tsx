@@ -45,7 +45,17 @@ export default function Reveal({
       { rootMargin: "0px 0px -60px 0px", threshold: 0.08 }
     );
     observer.observe(el);
-    return () => observer.disconnect();
+
+    // Some elements (large above-the-fold cards, images still loading) can end
+    // up with a zero-size bounding box on first paint and never cross the
+    // intersection threshold. Force-reveal as a safety net so content never
+    // stays permanently invisible.
+    const fallback = window.setTimeout(() => setRevealed(true), 700);
+
+    return () => {
+      observer.disconnect();
+      window.clearTimeout(fallback);
+    };
   }, [revealed]);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -11,7 +11,6 @@ const icons: Record<string, ReactNode> = {
   star: (
     <path d="M12 3.5 14.4 9.6 21 10.2l-5 4.3 1.6 6.5L12 17.5 6.4 21l1.6-6.5-5-4.3 6.6-.6L12 3.5Z" />
   ),
-  cross: <path d="M12 3.5v17M6 9h12" />,
   plane: <path d="M21 3 3 10.5l7 2.5m11-10L13.5 21l-2.5-8" />,
   leaf: (
     <path d="M5 19c8-.5 13-5.5 13.5-13.5C9.5 6 5 11 5 19ZM5 19c1-3 3-5.5 6-7.5" />
@@ -61,6 +60,7 @@ const icons: Record<string, ReactNode> = {
       <path d="M12 2.5v3M12 18.5v3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M2.5 12h3M18.5 12h3M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1" />
     </>
   ),
+  moon: <path d="M20 14.2A8.5 8.5 0 1 1 9.8 4a7 7 0 0 0 10.2 10.2Z" />,
   chat: (
     <path d="M4 5.5h16v10H9l-4 3.5v-3.5H4v-10Z" />
   ),

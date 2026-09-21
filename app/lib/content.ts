@@ -12,21 +12,23 @@ export const identity = {
   firstName: "Carol",
   lastName: "Cárdenas",
   roles: [
-    "Frontend Developer",
+    "Desarrolladora Frontend Freelance",
     "Estudiante de Ingeniería en Ciencia de Datos",
   ],
   founder: "Fundadora de Inspira Models",
-  available: "Disponible para prácticas profesionales",
+  available: "Buscando prácticas o contrato de aprendizaje",
   description:
-    "Desarrolladora apasionada por crear soluciones digitales que transforman ideas en experiencias reales. Lidero con disciplina, responsabilidad y compromiso con la excelencia en cada proyecto que emprendo.",
+    "Desarrolladora freelance apasionada por crear soluciones digitales que transforman ideas en experiencias reales. Busco unas prácticas profesionales o un contrato de aprendizaje para sumar mi experiencia construyendo proyectos reales a un equipo, con la misma disciplina, responsabilidad y compromiso con la excelencia que aplico en cada proyecto independiente que entrego.",
 };
 
 export const hero = {
   greeting: "Hola, soy Carol",
-  role: "Desarrolladora Frontend & Data Science",
+  role: "Desarrolladora Frontend Freelance & Data Science",
   location: "Medellín, Colombia",
   description:
-    "Construyo interfaces web claras y responsivas con React, JavaScript y Tailwind CSS, conectadas a bases de datos reales con Supabase. Me apasiona acompañar un producto desde el primer boceto hasta producción.",
+    "Construyo interfaces web claras y responsivas con React, JavaScript y Tailwind CSS, conectadas a bases de datos reales con Supabase. Como freelance he acompañado proyectos desde el primer boceto hasta producción, y ahora busco unas prácticas o un contrato de aprendizaje para seguir creciendo dentro de un equipo.",
+  photoAlt:
+    "Carol junto a su chihuahua en su escritorio, rodeada de libros y su setup de trabajo",
 };
 
 export const aboutMini = {
@@ -38,19 +40,28 @@ export const aboutMini = {
   verse: "Proverbios 16:3",
 };
 
-export const socials = [
+export const whatsappHref = "https://wa.link/q9rwn2";
+
+export interface SocialLink {
+  id: string;
+  label: string;
+  href: string;
+}
+
+export const socials: SocialLink[] = [
+  { id: "whatsapp", label: "WhatsApp", href: whatsappHref },
   { id: "github", label: "GitHub", href: "https://github.com/ccardenasdev" },
   {
     id: "linkedin",
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/carol-estefani-cardenas-117835415",
+    href: "https://www.linkedin.com/in/carolcardenas499/",
   },
   {
     id: "mail",
     label: "Correo",
     href: "mailto:cardenasrodriguezcarolestefani@gmail.com?subject=Contacto%20desde%20tu%20portafolio",
   },
-] as const;
+];
 
 export interface Stat {
   icon: string;
@@ -60,14 +71,14 @@ export interface Stat {
 
 export const stats: Stat[] = [
   { icon: "calendar", value: "2+", label: "Años aprendiendo cada día" },
-  { icon: "code", value: "3", label: "Proyectos en producción" },
+  { icon: "code", value: "3", label: "Proyectos freelance en producción" },
   { icon: "star", value: "10+", label: "Tecnologías que domino" },
-  { icon: "cross", value: "100%", label: "Disciplina y compromiso" },
+  { icon: "target", value: "100%", label: "Disciplina y compromiso" },
 ];
 
 export const goals2026 = [
   "Finalizar mi Ingeniería en Ciencia de Datos",
-  "Conseguir mis prácticas profesionales",
+  "Conseguir mis prácticas o mi contrato de aprendizaje",
   "Mejorar mis habilidades en IA",
   "Seguir liderando Inspira Models",
   "Aportar valor desde el primer día en un equipo",
@@ -92,6 +103,7 @@ export interface Project {
   tags: string[];
   href: string;
   accent: Accent;
+  thumbnail: string;
 }
 
 export const projectFilters: Array<ProjectCategory | "Todos"> = [
@@ -111,6 +123,7 @@ export const projects: Project[] = [
     tags: ["React", "Tailwind CSS", "Supabase", "Vercel"],
     href: "https://inspira-models-agency.vercel.app",
     accent: "rose",
+    thumbnail: "/images/projects/inspira.png",
   },
   {
     id: "urbanstep",
@@ -122,6 +135,7 @@ export const projects: Project[] = [
     tags: ["JavaScript", "HTML5", "CSS3", "Vercel"],
     href: "https://tienda-virtual-de-ropa.vercel.app",
     accent: "lavender",
+    thumbnail: "/images/projects/urbanstep.png",
   },
   {
     id: "calzasport",
@@ -133,6 +147,7 @@ export const projects: Project[] = [
     tags: ["Shopify", "Meta Ads", "Meta Pixel"],
     href: "https://calzasport.shop",
     accent: "sky",
+    thumbnail: "/images/projects/calzasport.png",
   },
 ];
 
@@ -242,15 +257,25 @@ export const timeline: TimelineEntry[] = [
   },
 ];
 
-export const contactCards = [
+export interface ContactCardItem {
+  id: string;
+  title: string;
+  icon: string;
+  handle: string;
+  href: string;
+  actionLabel: string;
+  accent: string;
+}
+
+export const contactCards: ContactCardItem[] = [
   {
-    id: "github",
-    title: "GitHub",
-    icon: "github",
-    handle: "github.com/ccardenasdev",
-    href: "https://github.com/ccardenasdev",
-    actionLabel: "Visitar perfil",
-    accent: "lavender",
+    id: "whatsapp",
+    title: "WhatsApp",
+    icon: "whatsapp",
+    handle: "Escríbeme directo por chat",
+    href: whatsappHref,
+    actionLabel: "Abrir WhatsApp",
+    accent: "mint",
   },
   {
     id: "mail",
@@ -266,11 +291,20 @@ export const contactCards = [
     title: "LinkedIn",
     icon: "linkedin",
     handle: "Conectemos profesionalmente",
-    href: "https://www.linkedin.com/in/carol-estefani-cardenas-117835415",
+    href: "https://www.linkedin.com/in/carolcardenas499/",
     actionLabel: "Ver perfil",
     accent: "sky",
   },
-] as const;
+  {
+    id: "github",
+    title: "GitHub",
+    icon: "github",
+    handle: "github.com/ccardenasdev",
+    href: "https://github.com/ccardenasdev",
+    actionLabel: "Visitar perfil",
+    accent: "lavender",
+  },
+];
 
 export const inspirations: { icon: string; label: string }[] = [
   { icon: "plane", label: "Aviación" },
@@ -288,7 +322,7 @@ export const purpose = {
   title: "Mi propósito profesional",
   body: "Seguir creciendo como desarrolladora, aportar soluciones que generen impacto y trabajar en un equipo que me permita aprender, servir y dejar huella a través de la tecnología.",
   callout:
-    "Busco mis prácticas profesionales para aplicar mis conocimientos y seguir construyendo mi mejor versión cada día.",
+    "Busco unas prácticas o un contrato de aprendizaje para sumar a un equipo la experiencia que ya construí como desarrolladora freelance, seguir aprendiendo y construir mi mejor versión cada día.",
 };
 
 export const traits: { icon: string; title: string; description: string }[] = [
@@ -304,10 +338,10 @@ export const traits: { icon: string; title: string; description: string }[] = [
       "Capaz de guiar equipos y tomar decisiones que impulsan el proyecto.",
   },
   {
-    icon: "shield",
-    title: "Resiliente",
+    icon: "rocket",
+    title: "Freelance",
     description:
-      "Enfrento desafíos con actitud positiva y mentalidad de crecimiento.",
+      "Ya gestiono proyectos reales de principio a fin: clientes, plazos y entregas.",
   },
   {
     icon: "spark",
@@ -328,7 +362,39 @@ export const terminalValues = {
   ],
 };
 
-export const closingQuote =
+export const closingQuote: string =
   "No se trata de ser la mejor, se trata de ser mejor que ayer.";
 
 export const cvHref = "/documents/CV_Carol_Cardenas.pdf";
+
+export const ui = {
+  heroGreeting: "¡Hola! Soy",
+  followLabel: "Sígueme en",
+  viewProjects: "Ver mis proyectos",
+  downloadCv: "Descargar CV",
+  talk: "Hablemos",
+  statsTitle: "Mi camino en números",
+  statsCta: "Conversemos",
+  goalsTitle: "Metas 2026",
+  techTitle: "Tecnologías que uso",
+  techFooter: "Siempre aprendiendo algo nuevo",
+  projectsTitle: "Proyectos destacados",
+  projectsViewAll: "Más en GitHub",
+  inspirationTitle: "Lo que me inspira",
+  whyWorkTitle: "¿Por qué trabajar conmigo?",
+  contactTitle: "Hablemos",
+  contactIntro:
+    "¿Buscas una desarrolladora freelance o quieres ofrecerme prácticas o un contrato de aprendizaje? Escríbeme, respondo rápido.",
+  experienceTitle: "Experiencia",
+  educationTitle: "Educación",
+  terminalLearning: "aprendiendo",
+  terminalBuildingDreams: "construyendoSueños",
+  themeToLight: "Cambiar a modo claro",
+  themeToDark: "Cambiar a modo oscuro",
+  langToggleLabel: "English",
+  projectThumbAlt: "Captura de la página principal de",
+  navHome: "Ir al inicio",
+  navLandmark: "Navegación principal",
+  menuOpen: "Abrir menú",
+  menuClose: "Cerrar menú",
+};

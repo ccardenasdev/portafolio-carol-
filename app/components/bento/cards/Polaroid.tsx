@@ -10,6 +10,7 @@ export default function Polaroid({
   size = "sm",
   image,
   imagePosition = "center",
+  imageScale,
 }: {
   label: string;
   caption?: string;
@@ -18,6 +19,7 @@ export default function Polaroid({
   size?: "sm" | "lg";
   image?: string;
   imagePosition?: string;
+  imageScale?: number;
 }) {
   return (
     <figure
@@ -33,7 +35,12 @@ export default function Polaroid({
             alt={caption ?? label}
             fill
             sizes="200px"
-            style={{ objectFit: "cover", objectPosition: imagePosition }}
+            style={{
+              objectFit: "cover",
+              objectPosition: imagePosition,
+              transform: imageScale ? `scale(${imageScale})` : undefined,
+              transformOrigin: imagePosition,
+            }}
           />
         ) : (
           <span>{label}</span>

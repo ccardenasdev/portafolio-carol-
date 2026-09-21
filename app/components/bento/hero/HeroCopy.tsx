@@ -1,14 +1,19 @@
-import Reveal from "../Reveal";
-import { identity, hero, cvHref, socials } from "../../lib/content";
-import { TechIcon } from "../icons/TechIcons";
-import { UiIcon } from "../icons/UiIcons";
+"use client";
+
+import Reveal from "../../Reveal";
+import { useLanguage } from "../../../lib/i18n";
+import { TechIcon } from "../../icons/TechIcons";
+import { UiIcon } from "../../icons/UiIcons";
 import styles from "./HeroCopy.module.css";
 
 export default function HeroCopy() {
+  const { t } = useLanguage();
+  const { identity, hero, cvHref, socials, ui } = t;
+
   return (
     <div className={styles.copy}>
       <Reveal variant="hero" delay={60} className={styles.greeting}>
-        ¡Hola! Soy <span aria-hidden="true">👋</span>
+        {ui.heroGreeting} <span aria-hidden="true">👋</span>
       </Reveal>
 
       <Reveal variant="hero" delay={120} as="h1" className={styles.name}>
@@ -21,7 +26,15 @@ export default function HeroCopy() {
       </Reveal>
 
       <Reveal variant="hero" delay={190} className={styles.pills}>
-        <span className={styles.pill}>{identity.roles.join(" • ")}</span>
+        {identity.roles.map((role, index) => (
+          <span
+            key={role}
+            className={styles.pill}
+            data-accent={index === 0 || undefined}
+          >
+            {role}
+          </span>
+        ))}
         <span className={styles.pill}>
           {identity.founder} <span aria-hidden="true">🤍</span>
         </span>
@@ -33,17 +46,17 @@ export default function HeroCopy() {
 
       <Reveal variant="hero" delay={300} className={styles.actions}>
         <a className={styles.primary} href="#proyectos">
-          <span>Ver mis proyectos</span>
+          <span>{ui.viewProjects}</span>
           <span aria-hidden="true">✨</span>
         </a>
         <a className={styles.secondary} href={cvHref} download="CV_Carol_Cardenas.pdf">
-          <span>Descargar CV</span>
+          <span>{ui.downloadCv}</span>
           <UiIcon name="download" className={styles.downloadIcon} />
         </a>
       </Reveal>
 
       <Reveal variant="hero" delay={360} className={styles.follow}>
-        <p>Sígueme en</p>
+        <p>{ui.followLabel}</p>
         <div className={styles.socialRow}>
           {socials.map((social) => (
             <a

@@ -1,15 +1,17 @@
 import BentoNav from "./BentoNav";
-import HeroRail from "./HeroRail";
-import HeroCopy from "./HeroCopy";
-import HeroWindow from "./HeroWindow";
-import SideRail from "./SideRail";
-import TechGridCard from "./TechGridCard";
-import ProjectsBentoCard from "./ProjectsBentoCard";
-import InspirationCard from "./InspirationCard";
-import PurposeCard from "./PurposeCard";
-import WhyWorkWithMeCard from "./WhyWorkWithMeCard";
-import TerminalCard from "./TerminalCard";
-import QuoteBar from "./QuoteBar";
+import HeroRail from "./hero/HeroRail";
+import HeroCopy from "./hero/HeroCopy";
+import HeroWindow from "./hero/HeroWindow";
+import SideRail from "./hero/SideRail";
+import TechGridCard from "./cards/TechGridCard";
+import ProjectsBentoCard from "./cards/ProjectsBentoCard";
+import InspirationCard from "./cards/InspirationCard";
+import PurposeCard from "./cards/PurposeCard";
+import WhyWorkWithMeCard from "./cards/WhyWorkWithMeCard";
+import TerminalCard from "./cards/TerminalCard";
+import TimelineCard from "./cards/TimelineCard";
+import ContactCard from "./cards/ContactCard";
+import QuoteBar from "./cards/QuoteBar";
 import FlatlayCorner from "./FlatlayCorner";
 import styles from "./BentoBoard.module.css";
 
@@ -42,6 +44,11 @@ export default function BentoBoard() {
           <PurposeCard />
           <WhyWorkWithMeCard />
           <TerminalCard />
+        </section>
+
+        <section className={styles.row4} aria-label="Trayectoria y contacto">
+          <TimelineCard />
+          <ContactCard />
         </section>
 
         <QuoteBar />

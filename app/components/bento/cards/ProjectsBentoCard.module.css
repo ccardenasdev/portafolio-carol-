@@ -75,18 +75,34 @@
 }
 
 .thumb {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
   aspect-ratio: 16 / 10;
   border-radius: 10px;
+  overflow: hidden;
   background: linear-gradient(155deg, color-mix(in srgb, var(--accent) 35%, white), white);
 }
 
+.thumbImage {
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.4s var(--ease-premium);
+}
+
+.project:hover .thumbImage {
+  transform: scale(1.04);
+}
+
 .thumbLabel {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(31, 31, 31, 0.72);
+  backdrop-filter: blur(4px);
   font-family: var(--font-mono), monospace;
-  font-size: 0.7rem;
-  color: var(--accent);
+  font-size: 0.66rem;
+  color: white;
   font-weight: 600;
 }
 

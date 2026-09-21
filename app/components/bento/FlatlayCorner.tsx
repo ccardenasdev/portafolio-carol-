@@ -23,13 +23,6 @@ export default function FlatlayCorner() {
       {/* book */}
       <rect x="90" y="168" width="56" height="10" rx="2" fill="var(--champagne)" />
       <rect x="96" y="158" width="44" height="10" rx="2" fill="var(--sky)" />
-      {/* cross */}
-      <path
-        d="M120 150v-32M110 128h20"
-        stroke="var(--champagne-vivid)"
-        strokeWidth="3"
-        strokeLinecap="round"
-      />
       {/* candle */}
       <rect x="160" y="140" width="16" height="38" rx="4" fill="var(--cream)" stroke="var(--border)" />
       <path d="M168 132c3 3 4 6 0 9-4-3-3-6 0-9Z" fill="var(--peach-vivid)" />

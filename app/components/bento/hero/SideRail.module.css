@@ -5,12 +5,6 @@
   min-width: 0;
 }
 
-.polaroidRow {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-}
-
 .duoRow {
   display: grid;
   grid-template-columns: auto 1fr;
