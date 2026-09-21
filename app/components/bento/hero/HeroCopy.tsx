@@ -38,6 +38,7 @@ export default function HeroCopy() {
         <span className={styles.pill}>
           {identity.founder} <span aria-hidden="true">🤍</span>
         </span>
+        <span className={styles.pill}>{identity.languages}</span>
       </Reveal>
 
       <Reveal variant="hero" delay={240} as="p" className={styles.description}>

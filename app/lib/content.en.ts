@@ -25,6 +25,7 @@ export const identity = {
     "Data Science Engineering Student",
   ],
   founder: "Founder of Inspira Models",
+  languages: "🌐 Spanish (native) · English (B1)",
   available: "Open to internships or an apprenticeship contract",
   description:
     "Freelance developer passionate about building digital solutions that turn ideas into real experiences. I'm looking for an internship or apprenticeship contract to bring the experience I've built delivering real projects to a team, with the same discipline, responsibility and commitment to excellence I bring to every independent project.",
@@ -190,6 +191,23 @@ export const timeline: TimelineEntry[] = [
     place: "SENA",
     description: "Top graduate — best student of the program.",
   },
+  {
+    type: "certification",
+    tag: "CERT_02",
+    date: "MAY 2026",
+    datetime: "2026",
+    title: "Cybersecurity — Red Team Operations",
+    place: "Cymetria Group · Alcaldía de Medellín",
+    description: "117 hours of hands-on offensive security training.",
+  },
+  {
+    type: "certification",
+    tag: "CERT_01",
+    date: "SENA",
+    datetime: "2025",
+    title: "English Level 6",
+    place: "SENA Certification",
+  },
 ];
 
 export const contactCards: ContactCardItem[] = [
@@ -309,6 +327,7 @@ export const ui = {
     "Looking for a freelance developer, or want to offer me an internship or apprenticeship contract? Message me, I reply fast.",
   experienceTitle: "Experience",
   educationTitle: "Education",
+  certificationsTitle: "Certifications",
   terminalLearning: "learning",
   terminalBuildingDreams: "buildingDreams",
   themeToLight: "Switch to light mode",

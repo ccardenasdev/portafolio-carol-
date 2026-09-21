@@ -16,6 +16,7 @@ export const identity = {
     "Estudiante de Ingeniería en Ciencia de Datos",
   ],
   founder: "Fundadora de Inspira Models",
+  languages: "🌐 Español (nativo) · Inglés (B1)",
   available: "Buscando prácticas o contrato de aprendizaje",
   description:
     "Desarrolladora freelance apasionada por crear soluciones digitales que transforman ideas en experiencias reales. Busco unas prácticas profesionales o un contrato de aprendizaje para sumar mi experiencia construyendo proyectos reales a un equipo, con la misma disciplina, responsabilidad y compromiso con la excelencia que aplico en cada proyecto independiente que entrego.",
@@ -200,7 +201,7 @@ export const aboutBio = [
 ];
 
 export interface TimelineEntry {
-  type: "work" | "education";
+  type: "work" | "education" | "certification";
   tag: string;
   date: string;
   datetime: string;
@@ -254,6 +255,23 @@ export const timeline: TimelineEntry[] = [
     title: "Técnica en Programación de Software",
     place: "SENA",
     description: "Egresada distinguida — mejor estudiante del programa.",
+  },
+  {
+    type: "certification",
+    tag: "CERT_02",
+    date: "MAYO 2026",
+    datetime: "2026",
+    title: "Ciberseguridad — Red Team Operativos",
+    place: "Cymetria Group · Alcaldía de Medellín",
+    description: "117 horas de formación práctica en operaciones ofensivas.",
+  },
+  {
+    type: "certification",
+    tag: "CERT_01",
+    date: "SENA",
+    datetime: "2025",
+    title: "Inglés nivel 6",
+    place: "Certificación SENA",
   },
 ];
 
@@ -387,6 +405,7 @@ export const ui = {
     "¿Buscas una desarrolladora freelance o quieres ofrecerme prácticas o un contrato de aprendizaje? Escríbeme, respondo rápido.",
   experienceTitle: "Experiencia",
   educationTitle: "Educación",
+  certificationsTitle: "Certificaciones",
   terminalLearning: "aprendiendo",
   terminalBuildingDreams: "construyendoSueños",
   themeToLight: "Cambiar a modo claro",
